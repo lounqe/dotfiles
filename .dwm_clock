@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+x=0; while true; do
+   vol=$(amixer get Master)
+
+   if (( 9 < x )); then
+      info=$(iwconfig wlp2s0)
+      ssid=$(echo "${info}" | grep ESSID | awk '{print $4}' | cut -d ":" -f2 | tr -d '"')
+      ssig=$(echo "${info}" | grep Signal | awk '{print $4}' | cut -d "=" -f2)
+      x=0
+   else
+      x=`expr $x + 1`
+   fi
+   
+	if [[ $(echo ${vol} | grep "off") != "" ]]; then
+     volume="off"
+   else
+     volume=$(echo ${vol} | egrep -o "[0-9]+%")
+   fi
+   xsetroot -name "${ssid}: ${ssig} < V:${volume} < B:$(acpi | awk '{ print $4 }' | tr -d ',') $(date +"< %A %x << %R")"
+   sleep 1
+done
