@@ -1,0 +1,1 @@
+ffmpeg -y -f alsa -i default -r 25 -f x11grab -s 1366x768 -i ${DISPLAY} -c:v libx264rgb -crf 0 -preset:v ultrafast -c:a pcm_s16le -af aresample=async=1:first_pts=0 out.mkv
