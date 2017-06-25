@@ -2,8 +2,8 @@
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
-sysresources=/usr/etc/X11/xinit/.Xresources
-sysmodmap=/usr/etc/X11/xinit/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # merge in defaults and keymaps
 
@@ -41,33 +41,31 @@ fi
 
 # start some nice programs
 
-if [ -d /usr/etc/X11/xinit/xinitrc.d ] ; then
- for f in /usr/etc/X11/xinit/xinitrc.d/?*.sh ; do
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
   [ -x "$f" ] && . "$f"
  done
  unset f
 fi
 
-#twm &
-#xclock -geometry 50x50-1+1 &
-#xterm -geometry 80x50+494+51 &
-#xterm -geometry 80x20+494-0 &
-#exec xterm -geometry 80x66+0+0 -name login
-export XDG_MENU_PREFIX="lxde-"
-
-# got time?
-sleep 2s && osd_clock -c black -s 0 -r -t -o -12 -f &
-
-feh --bg-scale ~/Pictures/Walls/dva.png &
+# Wall
+feh --bg-scale ~/Pictures/walls/sunsetbeach.jpg &
 
 # Autostart apps
-google-chrome-stable &
+chromium &
 mpd &
+stalonetray &
+volumeicon &
+batterymon &
 
-#start notification server
+# Start notification server
 dunst &
 
-#Cursor
+# Cursor
 xsetroot -cursor_name left_ptr &
 
-exec ck-launch-session dbus-launch cwm
+# Candy
+compton --config $HOME/.compton.conf --sw-opti &
+
+$HOME/.scripts/clock &
+exec cwm
