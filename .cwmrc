@@ -1,6 +1,4 @@
 ## cwm config  
-## dkeg 2013, 2014
-
 
 ## Default cwm keybindings
 
@@ -16,7 +14,7 @@
 #	MS-Tab          Reverse cycle through currently visible windows.
 #	CM-x            Delete current window.
 #	CM-[n]          Select group n, where n is 1-9.
-#	CM-0            Select all groups.
+#	CM-0             Select all groups.
 #	CM-g            Toggle group membership of current window.
 #	M-Right         Cycle through active groups.
 #	M-Left          Reverse cycle through active groups.
@@ -37,34 +35,29 @@
     # bind CMS-q unmap
     # bind CM-q quit
     bind CM-Return unmap
-	bind M-Return xfce4-terminal 
+	bind 4-Return xfce4-terminal 
 	bind CM-x unmap
 	bind M-q delete
 	bind M-r unmap
 	bind M-r exec
-	bind 4-p "dmenu_run -b -fn '-*-terminus-*-*-*-*-12-*-*-*-*-*-*-*' -nb '#181513' -nf '#555555' -sb '#181513' -sf '#d9d9d9'"
-    #bind 4-p "dmenu_run -b -fn '-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*' -nb '#000000' -nf '#555555' -sb '#000000' -sf '#d9d9d9'"
+#	bind M-p "dmenu_run -b -fn '-*-terminus-*-*-*-*-12-*-*-*-*-*-*-*' -nb '#181513' -nf '#555555' -sb '#181513' -sf '#d9d9d9'"
+    bind M-p "rofi -show run"	
 	bind CMS-l label
 	bind CM-f unmap
 	bind M-f maximize 
 	bind M-e "xfce4-terminal -e nano .cwmrc"
 	bind MS-m menusearch
-	bind MS-plus "amixer set Master 5.0%+"
-	bind MS-minus "amixer set Master 5.0%-"
-	bind MS-F8 "amixer set Master toggle"
-    bind M-p current
-    bind MS-p nowPlaying
 
-	bind 4-o unmap
+	bind M-o unmap
 	bind CM-equal unmap	
 	bind M-backslash vmaximize
 	bind CMS-equal unmap	
-	bind M-minus hmaximize
-	bind M-1 grouponly1
-	bind M-2 grouponly2
-	bind M-3 grouponly3
-	bind M-4 grouponly4
-	bind M-5 grouponly
+	bind 4-minus hmaximize
+	bind 4-1 grouponly1
+	bind 4-2 grouponly2
+	bind 4-3 grouponly3
+	bind 4-4 grouponly4
+	bind 4-5 grouponly
 	bind MS-1 movetogroup1
 	bind MS-2 movetogroup2
 	bind MS-3 movetogroup3
@@ -72,29 +65,30 @@
 	bind MS-5 movetogroup5
 
 
-	mousebind M-2 window_lower
-	mousebind M-3 window_resize
+	mousebind 4-2 window_lower
+	mousebind 4-3 window_resize
 
 ## Application menu
-	command file "pcmanfm" 
-	command music "urxvt -e ncmpcpp" 
-	command irc "urxvt -e weechat"
-    command htop "urxvt -e htop"
     command clock "urxvt -e tty-clock -c"
+    command file "pcmanfm" 
+    command htop "urxvt -e htop"
+    command irc "urxvt -e irssi"
+    command music "urxvt -e ncmpcpp" 
     command torrent "urxvt -e rtorrent"
     command volume "urxvt -e alsamixer"
-	command browser "google-chrome-stable" 
-
+    command web "chromium"
+    ----------------------
 ## Fonts, Style, Color
-    fontname        "hack:pixelsize=10"
+    fontname        "hack:pixelsize=12"
   	color menubg    "#181513"
     color font      "#b9ae9e"
 
-	borderwidth 3 
+	borderwidth 1
+	snapdist 10 
     color activeborder      "#6f685e"
     color inactiveborder    "#282221"
-    color activeborder      "#35312f"
-    gap 30 30 30 30         #[T,B,L,R] 
+    color activeborder      "#637268"
+    gap 22 0 0 0
           
 ## Ignore programs; no borders
 	ignore xclock
@@ -102,7 +96,7 @@
     ignore menu
 
 ## Groups predefined
-	autogroup 1 "Firefox"
+	autogroup 1 "chromium"
 
 ## Tiling
 	#bind 4S-h 	htile
@@ -113,13 +107,13 @@
 	mousebind M-1  	window_move
 
 ## pointer movement
-    bind 4-j ptrmovedown 
+    bind M-j ptrmovedown 
     bind 4S-j bigptrmovedown 
-    bind 4-k ptrmoveup 
+    bind M-k ptrmoveup 
     bind 4S-k bigptrmoveup 
-    bind 4-h ptrmoveleft 
+    bind M-h ptrmoveleft 
     bind 4S-h bigptrmoveleft 
-    bind 4-l ptrmoveright 
+    bind M-l ptrmoveright 
     bind 4S-l bigptrmoveright 
 
 ## Window movement (standard bindings)
@@ -144,3 +138,4 @@
 
     snapdist 4 
     sticky yes
+
