@@ -1,14 +1,5 @@
 #!/bin/sh
 
-battery() {
-    BATC=/sys/class/power_supply/BAT0/capacity
-    BATS=/sys/class/power_supply/BAT0/status
-
-    test "`cat $BATS`" = "Charging" && echo -n '+' || echo -n '-'
-
-    sed -n p $BATC
-}
-
 while :; do
   echo "%{c}$(date '+%a %d %b %H:%M')"
 	sleep 2s
