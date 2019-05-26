@@ -1,132 +1,43 @@
-!-----------------------------------------------------------------------
-!           Xft settings
-!-----------------------------------------------------------------------
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: true
+XTerm.vt100.saveLines: 4096
+XTerm.vt100.faceName: nerd-fonts-iosevka:size=10:antialias=false
+XTerm.vt100.font: 7x13
+XTerm.vt100.selectToClipboard
 
-Xft.dpi:                96
-Xft.autohint:           0       
-Xft.antialias:          true
-Xft.rgba:               rgb
-Xft.hinting:            true
-Xft.lcdfilter:          lcddefault
-Xft.hintstyle:          hintsfull
+! special
+*.foreground:   #ffffff
+*.background:   #051519
+*.cursorColor:  #ffffff
 
+! black
+*.color0:       #051519
+*.color8:       #323b3e
 
-!-----------------------------------------------------------------------
-!         URxvt settings 
-!-----------------------------------------------------------------------
+! red
+*.color1:       #f8818e
+*.color9:       #fb3d66
 
-URxvt.internalBorder:    10
-URxvt.externalBorder:    10
-!URxvt.lineSpace:        0
-!urxvt*shading:          30
-URxvt.depth:             32
-URxvt.saveLines:         10000
-URxvt*geometry:          96x30
-URxvt*terminalName:      rxvt-unicode-256color
-URxvt*visualBell:        false
+! green
+*.color2:       #84969a
+*.color10:      #22292a
 
-!! Scrollbar
-!URxvt.scrollStyle:      rxvt
-URxvt.scrollBar:         false
-URxvt*scrollTtyOutput:   false
-URxvt*scrollWithBuffer:  true
-URxvt*scrollTtyKeypress: true
+! yellow
+*.color3:       #97a6aa
+*.color11:      #3e494c
 
-!! Set the font
-URxvt*font: xft:hack:pixelsize=12:antialias=false
-URxvt*boldFont: xft:hack:pixelsize=12:antialias=false
+! blue
+*.color4:       #5e6f73
+*.color12:      #a2b0b3
 
-!! Keybinding
-URxvt.keysym.C-Up:       perl:font-size:increase
-URxvt.keysym.C-Down:     perl:font-size:decrease
-URxvt.keysym.C-S-Up:     perl:font-size:incglobal
-URxvt.keysym.C-S-Down:   perl:font-size:decglobal
-!Home and End keys to jump to the beginning and end of lines
-URxvt*keysym.Home:       \033[1~
-URxvt*keysym.End:        \033[4~
+! magenta
+*.color5:       #677a7e
+*.color13:      #e0e5e6
 
-!! Tabs
-URxvt.tabbed.tabbar-bg:  -1
-URxvt.tabbed.tabbar-fg:  -2
-URxvt.tabbed.tab-bg:     -2
-URxvt.tabbed.tab-fg:     -1
-URxvt.tabbed.title-bg:   -1
-URxvt.tabbed.title-fg:   -2
-URxvt.tabbed.autohide:   true
-URxvt.tabbed.new-button: false
-URxvt.tabbed.title:      true
+! cyan
+*.color6:       #7b8e93
+*.color14:      #556468
 
-!! Perl extensions
-! url-select (part of urxvt-perls package)
-URxvt.perl-ext-common:      default,clipboard,matcher,keyboard-select,config-reload
-URxvt.keysym.M-u: perl:     url-select:select_next
-URxvt.url-select.autocopy:  true
-URxvt.url-select.button:    2
-URxvt.url-select.underline: true
-URxvt.url-launcher:         /usr/bin/google-chrome-stable
-URxvt.matcher.button:       1
-
-!! CopyPaste Keys
-URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
-
-!! Disable the stupid ctrl+shift 'feature'
-URxvt.iso14755:            false
-URxvt.iso14755_52:         false
-
-*cursorColor:                         #917154
-*colorIT:                             #E3AB8D
-*colorBD:                             #F0E5DF
-*colorUL:                             #cd546c
-*VT100.colorBDMode:                   true
-*VT100.colorBD:                       red
-*VT100.colorULMode:                   true
-*VT100.colorUL:                       magenta
-*VT100.veryBoldColors:                6
-
-*cursorColor:                         #917154
-*colorIT:                             #E3AB8D
-*colorBD:                             #F0E5DF
-*colorUL:                             #cd546c
-*VT100.colorBDMode:                   true
-*VT100.colorBD:                       red
-*VT100.colorULMode:                   true
-*VT100.colorUL:                       magenta
-*VT100.veryBoldColors:                6
-
-
-*foreground: #DDCCBB
-
-! Brown BG
-!*background: #30251D
-
-! Grey BG
-*background: #151515
-
-
-!black
-*color0:     #393939
-*color8:     #AF875F
-!red
-*color1:     #BF1E2D
-*color9:     #E7212A
-!green
-*color2:     #9DBA3A
-*color10:    #A9C938
-!yellow
-*color3:     #F5B915
-*color11:    #F7D325
-!blue
-*color4:     #1CA1DB
-*color12:    #00AFDA
-!magenta
-*color5:     #652F90
-*color13:    #894E9F
-!cyan
-*color6:     #EA7D24
-*color14:    #F79321
-!white
-*color7:     #E7E8E9
-*color15:    #F3F3F4
-
-
+! white
+*.color7:       #b3bec1
+*.color15:      #f7f8f8
